@@ -32,12 +32,12 @@ const Navbar = ({ userInfo, onSearchNote, handleClearSearch }) => {
     try {
       dispatch(signoutStart())
 
-      const res = await axios.get("http://localhost:3000/api/auth/signout", {
+      const res = await axios.get("https://blog-lyart-seven-89.vercel.app/api/auth/signout", {
         withCredentials: false,
       })
       if(res.status==401){
         alert("user session expired")
-        const signoutres = await axios.get("http://localhost:3000/api/auth/signout", {
+        const signoutres = await axios.get("https://blog-lyart-seven-89.vercel.app/api/auth/signout", {
           withCredentials: false,
         })
         navigate("/login")
